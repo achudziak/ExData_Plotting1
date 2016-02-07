@@ -17,26 +17,20 @@ png("./ExData_Plotting1/plot4.png")
 
 par(mfrow=c(2,2))
 
-with(data,{
-  plot(data2$day,data2$Global_active_power,type = "l",ylab = "Global Active Power", xlab="")
-})
+#plot1
+plot(data2$day,data2$Global_active_power,type = "l",ylab = "Global Active Power", xlab="")
 
-
-with(data,{
+#plot2
   plot(data2$day,data2$Voltage, type = "l",ylab = "Voltage", xlab="datetime")
-})
 
-
-with(data,{
+#plot3
   plot(data2$day,data2$Sub_metering_1,type = "l",ylab = "Energy sub metering", xlab="")
   lines(data2$day,data2$Sub_metering_2,col="red")
   lines(data2$day,data2$Sub_metering_3,col="blue")
   legend("topright",bty="n",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1,1),col=c("black","red","blue"))
-})
 
-
-with(data,{
+#plot4
   plot(data2$day,data2$Global_reactive_power,type = "h",ylab = "Global_reactive_power", xlab="datetime")
-})
+
 
 dev.off()
